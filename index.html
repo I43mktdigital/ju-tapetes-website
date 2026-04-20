@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JÚ Tapetes | Artesanato em Guabiruba/SC</title>
+    <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -50,18 +51,21 @@
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--marrom-escuro);
-            text-decoration: none;
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            text-decoration: none;
         }
 
-        .logo span {
-            color: var(--dourado);
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
         }
 
         .nav-links {
@@ -1128,7 +1132,9 @@
 <body>
     <header>
         <nav>
-            <a href="#" class="logo">JÚ <span>TAPETES</span></a>
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="JÚ Tapetes Logo">
+            </a>
             <ul class="nav-links">
                 <li><a href="#home">Início</a></li>
                 <li><a href="#produtos">Produtos</a></li>
