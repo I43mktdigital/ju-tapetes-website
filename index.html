@@ -819,6 +819,64 @@
             margin-top: 0.25rem;
         }
 
+        /* About Section */
+        .about {
+            padding: 8rem 5%;
+            background-color: var(--bege);
+            position: relative;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--branco);
+            padding: 4rem;
+            border-radius: 40px;
+            box-shadow: 0 20px 60px rgba(92, 74, 58, 0.1);
+            text-align: center;
+            border: 1px solid var(--bege-escuro);
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--marrom-escuro);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--dourado);
+            border-radius: 2px;
+        }
+
+        .about p {
+            color: var(--marrom-escuro);
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-highlight {
+            color: var(--dourado) !important;
+            font-weight: 600;
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
         /* Reviews Section */
         .reviews {
             padding: 5rem 5%;
@@ -1084,6 +1142,11 @@
             .btn {
                 width: 100%;
                 text-align: center;
+            }
+            
+            .about-container {
+                padding: 2rem;
+                border-radius: 24px;
             }
         }
 
@@ -1698,8 +1761,8 @@
             const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
             toastText.innerHTML = `${randomPhrase} <strong style="color: var(--dourado);">${sale.product}</strong>`;
 
-            // Tempo aleatório entre 2-30 minutos para parecer mais real
-            const times = ['2 minutos', '5 minutos', '8 minutos', '12 minutos', '15 minutos', '20 minutos', '30 minutos'];
+            // Tempo aleatório em horas para parecer mais real ao longo do dia
+            const times = ['2 horas', '5 horas', '8 horas', '9 horas', '12 horas', '1 hora', '45 minutos'];
             const randomTime = times[Math.floor(Math.random() * times.length)];
             toast.querySelector('.sales-toast-time').innerHTML = `<span style="display: inline-flex; align-items: center; gap: 5px;"><span style="color: #25D366;">●</span> há ${randomTime}</span>`;
 
