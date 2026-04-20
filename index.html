@@ -835,7 +835,7 @@
             width: 50px;
             height: 50px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--dourado) 0%, #B8944F 100%);
+            background: linear-gradient(135deg, var(--bege-escuro) 0%, var(--bege) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -844,91 +844,34 @@
 
         .review-info h4 {
             font-size: 1rem;
-            margin-bottom: 0.25rem;
+            color: var(--branco);
         }
 
         .review-info span {
-            font-size: 0.85rem;
-            opacity: 0.7;
+            font-size: 0.8rem;
+            opacity: 0.8;
         }
 
         .reviews-cta {
             text-align: center;
-            margin-top: 3rem;
+            margin-top: 4rem;
         }
 
         .btn-white {
             background: var(--branco);
             color: var(--marrom-escuro);
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         .btn-white:hover {
+            background: var(--bege);
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
         }
 
-        @media (max-width: 768px) {
-            .sales-toast {
-                left: 1rem;
-                right: 1rem;
-                max-width: none;
-                bottom: 90px;
-            }
-
-            .reviews-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* About Section */
-        .about {
-            padding: 5rem 5%;
-            background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--marrom) 100%);
-            color: var(--branco);
-        }
-
-        .about-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .about h2 {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .about p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .about-highlight {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.3rem;
-            font-style: italic;
-            color: var(--dourado);
-            margin-top: 2rem;
-        }
-
-        /* Contact */
+        /* Contact Section */
         .contact {
             padding: 5rem 5%;
-            max-width: 800px;
-            margin: 0 auto;
             text-align: center;
+            background: var(--bege);
         }
 
         .contact h2 {
@@ -941,32 +884,36 @@
         .contact p {
             color: var(--marrom);
             margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-buttons {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
-            flex-wrap: wrap;
         }
 
         /* Footer */
         footer {
             background: var(--marrom-escuro);
-            color: var(--bege);
-            padding: 3rem 5%;
+            color: var(--branco);
+            padding: 4rem 5% 2rem;
             text-align: center;
         }
 
         .footer-logo {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
         }
 
         .footer-tagline {
             font-style: italic;
-            color: var(--dourado);
+            opacity: 0.8;
             margin-bottom: 2rem;
         }
 
@@ -974,14 +921,15 @@
             display: flex;
             gap: 2rem;
             justify-content: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             flex-wrap: wrap;
         }
 
         .footer-links a {
-            color: var(--bege);
+            color: var(--branco);
             text-decoration: none;
             transition: color 0.3s;
+            font-weight: 300;
         }
 
         .footer-links a:hover {
@@ -989,36 +937,37 @@
         }
 
         .footer-copy {
-            font-size: 0.9rem;
-            opacity: 0.7;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
         }
 
         /* Floating WhatsApp */
         .whatsapp-float {
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background: #25D366;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--branco);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--branco);
             font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
             text-decoration: none;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s;
             z-index: 999;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+            transform: scale(1.1) rotate(10deg);
         }
 
-        /* Responsive */
+        /* Mobile Menu */
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
@@ -1026,11 +975,7 @@
 
             .mobile-menu {
                 display: block;
-            }
-
-            .hero {
-                padding: 4rem 5%;
-                min-height: 80vh;
+                color: var(--marrom-escuro);
             }
 
             .hero-buttons {
@@ -1060,11 +1005,6 @@
                 gap: 1.5rem;
                 max-width: 400px;
                 margin: 0 auto;
-            }
-
-            .products-grid:has(.product-card:nth-child(1):last-child),
-            .products-grid:has(.product-card:nth-child(2):last-child) {
-                grid-template-columns: 1fr !important;
             }
 
             .product-image {
@@ -1602,20 +1542,20 @@
             });
         });
 
-        // Sales Toast Notifications - Dados realistas
+        // Sales Toast Notifications - Dados realistas e dinâmicos
         const salesData = [
-            { name: 'Maria Helena', city: 'Blumenau', product: 'Jogo de Cozinha Bege', time: '2 minutos', initials: 'MH', color: '#E74C3C' },
-            { name: 'Ana Paula', city: 'Guabiruba', product: 'Tapete de Sala Chumbo', time: '5 minutos', initials: 'AP', color: '#3498DB' },
-            { name: 'Roberto Silva', city: 'Brusque', product: 'Tapete Porta Preto', time: '8 minutos', initials: 'RS', color: '#27AE60' },
-            { name: 'Juliana Costa', city: 'Itajaí', product: 'Passadeira Areia', time: '12 minutos', initials: 'JC', color: '#F39C12' },
-            { name: 'Fernanda Lima', city: 'Florianópolis', product: 'Tapete Bege 1,45m', time: '15 minutos', initials: 'FL', color: '#9B59B6' },
-            { name: 'Carlos Eduardo', city: 'Joinville', product: 'Jogo de Cozinha Azul', time: '18 minutos', initials: 'CE', color: '#1ABC9C' },
-            { name: 'Mariana Souza', city: 'Balneário Camboriú', product: 'Tapete Porta Bege', time: '22 minutos', initials: 'MS', color: '#E67E22' },
-            { name: 'Lucas Mendes', city: 'São José', product: 'Tapete Grafite 1,45m', time: '25 minutos', initials: 'LM', color: '#34495E' },
-            { name: 'Patrícia Alves', city: 'Gaspar', product: 'Passadeira Preta', time: '3 minutos', initials: 'PA', color: '#16A085' },
-            { name: 'Bruno Rocha', city: 'Ilhota', product: 'Tapete Porta Chumbo', time: '7 minutos', initials: 'BR', color: '#C0392B' },
-            { name: 'Camila Dias', city: 'Navegantes', product: 'Jogo de Cozinha Bege', time: '11 minutos', initials: 'CD', color: '#8E44AD' },
-            { name: 'Rafael Teixeira', city: 'Penha', product: 'Tapete Azul 1,45m', time: '14 minutos', initials: 'RT', color: '#2980B9' }
+            { name: 'Maria Helena', city: 'Blumenau', product: 'Jogo de Cozinha Bege', initials: 'MH', color: '#E74C3C', status: 'Cliente Novo' },
+            { name: 'Ana Paula', city: 'Guabiruba', product: 'Tapete de Sala Chumbo', initials: 'AP', color: '#3498DB', status: '2ª compra' },
+            { name: 'Roberto Silva', city: 'Brusque', product: 'Tapete Porta Preto', initials: 'RS', color: '#27AE60', status: 'Cliente VIP' },
+            { name: 'Juliana Costa', city: 'Itajaí', product: 'Passadeira Areia', initials: 'JC', color: '#F39C12', status: 'Cliente Novo' },
+            { name: 'Fernanda Lima', city: 'Florianópolis', product: 'Tapete Bege 1,45m', initials: 'FL', color: '#9B59B6', status: '3ª compra' },
+            { name: 'Carlos Eduardo', city: 'Joinville', product: 'Jogo de Cozinha Azul', initials: 'CE', color: '#1ABC9C', status: '2ª compra' },
+            { name: 'Mariana Souza', city: 'Balneário Camboriú', product: 'Tapete Porta Bege', initials: 'MS', color: '#E67E22', status: 'Cliente Novo' },
+            { name: 'Lucas Mendes', city: 'São José', product: 'Tapete Grafite 1,45m', initials: 'LM', color: '#34495E', status: '2ª compra' },
+            { name: 'Patrícia Alves', city: 'Gaspar', product: 'Passadeira Preta', initials: 'PA', color: '#16A085', status: 'Cliente VIP' },
+            { name: 'Bruno Rocha', city: 'Ilhota', product: 'Tapete Porta Chumbo', initials: 'BR', color: '#C0392B', status: 'Cliente Novo' },
+            { name: 'Camila Dias', city: 'Navegantes', product: 'Jogo de Cozinha Bege', initials: 'CD', color: '#8E44AD', status: '2ª compra' },
+            { name: 'Rafael Teixeira', city: 'Penha', product: 'Tapete Azul 1,45m', initials: 'RT', color: '#2980B9', status: 'Cliente Novo' }
         ];
 
         let toastIndex = 0;
@@ -1640,18 +1580,21 @@
             const avatarImg = generateAvatarSVG(sale.initials, sale.color);
             toastAvatar.innerHTML = `<img src="${avatarImg}" alt="${sale.name}" style="width: 45px; height: 45px; border-radius: 50%;">`;
 
+            // Badge de status do cliente
+            const statusBadge = `<span style="display:inline-block; font-size:10px; background:var(--bege-escuro); color:var(--marrom-escuro); padding:2px 6px; border-radius:4px; margin-left:5px; vertical-align:middle; font-weight:700; text-transform:uppercase;">${sale.status}</span>`;
+
             // Texto mais natural e variado
             const phrases = [
-                `<strong>${sale.name}</strong> de ${sale.city} acabou de comprar`,
-                `<strong>${sale.name}</strong> de ${sale.city} comprou à pouco`,
-                `Nova compra: <strong>${sale.name}</strong> de ${sale.city}`,
-                `<strong>${sale.name}</strong> (${sale.city}) garantiu seu`
+                `<strong>${sale.name}</strong> de ${sale.city} ${statusBadge} acabou de comprar`,
+                `<strong>${sale.name}</strong> (${sale.city}) ${statusBadge} garantiu seu`,
+                `Nova venda: <strong>${sale.name}</strong> ${statusBadge} de ${sale.city}`,
+                `<strong>${sale.name}</strong> ${statusBadge} de ${sale.city} acabou de levar o`
             ];
             const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
             toastText.innerHTML = `${randomPhrase} <strong style="color: var(--dourado);">${sale.product}</strong>`;
 
-            // Tempo aleatório entre 1-30 minutos
-            const times = ['1 minuto', '2 minutos', '3 minutos', '5 minutos', '7 minutos', '10 minutos', '12 minutos', '15 minutos'];
+            // Tempo aleatório entre 2-30 minutos para parecer mais real
+            const times = ['2 minutos', '5 minutos', '8 minutos', '12 minutos', '15 minutos', '20 minutos', '30 minutos'];
             const randomTime = times[Math.floor(Math.random() * times.length)];
             toast.querySelector('.sales-toast-time').innerHTML = `<span style="display: inline-flex; align-items: center; gap: 5px;"><span style="color: #25D366;">●</span> há ${randomTime}</span>`;
 
@@ -1662,9 +1605,9 @@
             }, 6000);
         }
 
-        // Show first toast after 5 seconds, then every 15 seconds
-        setTimeout(showToast, 5000);
-        setInterval(showToast, 15000);
+        // Intervalo maior: mostra a primeira após 10 segundos, depois a cada 45 segundos
+        setTimeout(showToast, 10000);
+        setInterval(showToast, 45000);
 
         // Add scarcity badges to some products
         const scarcityProducts = [2, 6, 10, 14]; // IDs of products with scarcity
