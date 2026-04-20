@@ -1,0 +1,1791 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JÚ Tapetes | Artesanato em Guabiruba/SC</title>
+    
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="description" content="JÚ Tapetes - Tapetes artesanais de alta qualidade feitos à mão em Guabiruba/SC. Conforto e elegância para sua casa com jogos de cozinha, sala e passadeiras.">
+    <meta name="keywords" content="tapetes artesanais, guabiruba, artesanato, decoração, tapete de crochê, jogo de cozinha, brusque, santa catarina">
+    <meta name="author" content="JÚ Tapetes">
+    
+    <!-- Open Graph (WhatsApp, Facebook, Instagram) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JÚ Tapetes | Conforto e Arte em cada ponto">
+    <meta property="og:description" content="Tapetes artesanais feitos com amor em Guabiruba/SC. Clique e conheça nosso catálogo!">
+    <meta property="og:image" content="https://jutapetes.com.br/img/logo.png">
+    <meta property="og:url" content="https://jutapetes.com.br">
+    
+    <link rel="icon" type="image/png" href="img/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bege: #F5F0E8;
+            --bege-escuro: #E8DDD0;
+            --marrom: #8B7355;
+            --marrom-escuro: #5C4A3A;
+            --preto: #2C2C2C;
+            --branco: #FFFFFF;
+            --dourado: #C9A96E;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bege);
+            color: var(--preto);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--bege) 0%, var(--bege-escuro) 100%);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--marrom-escuro);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--dourado);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section Slider */
+        .hero {
+            margin-top: 80px;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            padding: 4rem 2rem;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            margin: 0 5%;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            color: var(--branco);
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero h1 span {
+            color: var(--dourado);
+            font-style: italic;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.5rem);
+            color: var(--bege);
+            margin-bottom: 2rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+        }
+
+        .hero-tagline {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            color: var(--dourado);
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--marrom) 0%, var(--marrom-escuro) 100%);
+            color: var(--branco);
+            box-shadow: 0 4px 15px rgba(139, 115, 85, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.4);
+        }
+
+        .btn-secondary {
+            background: var(--branco);
+            color: var(--marrom-escuro);
+            border: 2px solid var(--marrom);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .btn-secondary:hover {
+            background: var(--marrom);
+            color: var(--branco);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(139, 115, 85, 0.3);
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--branco);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Categories */
+        .categories {
+            padding: 5rem 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--marrom-escuro);
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--marrom);
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        @media (max-width: 1200px) {
+            .category-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .category-card:last-child:nth-child(odd) {
+                grid-column: 1 / -1;
+                max-width: 50%;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                max-width: 350px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .category-card:last-child:nth-child(odd) {
+                grid-column: auto;
+                max-width: 100%;
+            }
+        }
+
+        .category-card {
+            background: var(--branco);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            border-color: var(--dourado);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .category-card:hover .category-image img {
+            transform: scale(1.1);
+        }
+
+        .category-image::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50%;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+
+        .category-icon {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            background: var(--branco);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+
+        .category-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .category-card h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--marrom-escuro);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .category-card p {
+            color: var(--marrom);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .category-badge {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.4rem 1rem;
+            background: var(--bege);
+            color: var(--marrom-escuro);
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .category-card:hover .category-badge {
+            background: var(--dourado);
+            color: var(--branco);
+        }
+
+        /* Products */
+        .products {
+            padding: 5rem 5%;
+            background: var(--branco);
+            position: relative;
+        }
+
+        .products::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(180deg, var(--bege) 0%, var(--branco) 100%);
+        }
+
+        .products-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .products-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+            gap: 2.5rem;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* Desktop: up to 3 columns but centered */
+        @media (min-width: 1200px) {
+            .products-grid {
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+        }
+
+        /* Adjusting for items on the last row */
+        .products-grid::after {
+            content: "";
+            flex: auto;
+        }
+
+        /* Tablet: 2 columns */
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile: 1 column, full width */
+        @media (max-width: 639px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        .product-card {
+            background: var(--branco);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+        }
+
+        /* Countdown Section */
+        .countdown-section {
+            background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--marrom) 100%);
+            color: var(--branco);
+            padding: 4rem 5%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .countdown-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .countdown-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--dourado);
+        }
+
+        .timer-grid {
+            display: flex;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .timer-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 20px;
+            min-width: 100px;
+            border: 1px solid rgba(255,255,255,0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .timer-value {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: var(--branco);
+            line-height: 1;
+        }
+
+        .timer-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 320px;
+            background: linear-gradient(135deg, var(--bege-escuro) 0%, var(--bege) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-image-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 60%, rgba(92, 74, 58, 0.6) 100%);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .product-card:hover .product-image-overlay {
+            opacity: 1;
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            background: linear-gradient(135deg, var(--dourado) 0%, #B8944F 100%);
+            color: var(--branco);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 10px rgba(201, 169, 110, 0.3);
+            z-index: 2;
+        }
+
+        .product-info {
+            padding: 1.5rem 2rem 2rem;
+        }
+
+        .product-category {
+            color: var(--dourado);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--marrom-escuro);
+            margin: 0.5rem 0;
+            line-height: 1.3;
+        }
+
+        .product-specs {
+            color: var(--marrom);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .product-specs::before {
+            content: '📐';
+            font-size: 0.8rem;
+        }
+
+        .product-price {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--marrom-escuro);
+            margin-bottom: 1.2rem;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .product-whatsapp {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--branco);
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .product-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+        }
+
+        .product-whatsapp:active {
+            transform: translateY(0);
+        }
+
+        /* Products Filter */
+        .products-filter {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            padding: 0 1rem;
+        }
+
+        .filter-btn {
+            padding: 0.8rem 1.5rem;
+            background: var(--branco);
+            border: 2px solid var(--bege-escuro);
+            border-radius: 50px;
+            color: var(--marrom);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--dourado);
+            color: var(--marrom-escuro);
+        }
+
+        .filter-btn.active {
+            background: var(--marrom);
+            border-color: var(--marrom);
+            color: var(--branco);
+        }
+
+        .products-empty {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--branco);
+            border-radius: 24px;
+            margin-top: 2rem;
+        }
+
+        .empty-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+
+        .products-empty h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--marrom-escuro);
+            margin-bottom: 0.5rem;
+        }
+
+        .products-empty p {
+            color: var(--marrom);
+        }
+
+        /* Scarcity Badge */
+        .scarcity-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: linear-gradient(135deg, #E74C3C 0%, #C0392B 100%);
+            color: var(--branco);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            z-index: 2;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Recent Sales Toast */
+        .sales-toast {
+            position: fixed;
+            bottom: 100px;
+            left: 2rem;
+            background: var(--branco);
+            padding: 1rem 1.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            max-width: 350px;
+            z-index: 998;
+            transform: translateX(-120%);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-left: 4px solid var(--dourado);
+        }
+
+        .sales-toast.show {
+            transform: translateX(0);
+        }
+
+        .sales-toast-avatar {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--bege-escuro) 0%, var(--bege) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .sales-toast-content {
+            flex: 1;
+        }
+
+        .sales-toast-text {
+            font-size: 0.9rem;
+            color: var(--marrom-escuro);
+            line-height: 1.4;
+        }
+
+        .sales-toast-text strong {
+            color: var(--dourado);
+        }
+
+        .sales-toast-time {
+            font-size: 0.75rem;
+            color: var(--marrom);
+            margin-top: 0.25rem;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, var(--marrom-escuro) 0%, var(--marrom) 100%);
+            color: var(--branco);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reviews::before {
+            content: '"';
+            position: absolute;
+            top: -50px;
+            left: 5%;
+            font-size: 400px;
+            font-family: 'Playfair Display', serif;
+            opacity: 0.05;
+            line-height: 1;
+        }
+
+        .reviews-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .reviews-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .review-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 24px;
+            padding: 2rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+
+        .review-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .review-stars {
+            color: #FFD700;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .review-text {
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .review-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .review-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--bege-escuro) 0%, var(--bege) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        .review-info h4 {
+            font-size: 1rem;
+            color: var(--branco);
+        }
+
+        .review-info span {
+            font-size: 0.8rem;
+            opacity: 0.8;
+        }
+
+        .reviews-cta {
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .btn-white {
+            background: var(--branco);
+            color: var(--marrom-escuro);
+        }
+
+        .btn-white:hover {
+            background: var(--bege);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 5%;
+            text-align: center;
+            background: var(--bege);
+        }
+
+        .contact h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--marrom-escuro);
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            color: var(--marrom);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--marrom-escuro);
+            color: var(--branco);
+            padding: 4rem 5% 2rem;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+        }
+
+        .footer-tagline {
+            font-style: italic;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: var(--branco);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 300;
+        }
+
+        .footer-links a:hover {
+            color: var(--dourado);
+        }
+
+        .footer-copy {
+            font-size: 0.8rem;
+            opacity: 0.5;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+        }
+
+        /* Floating WhatsApp */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 65px;
+            height: 65px;
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: var(--branco);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            text-decoration: none;
+            z-index: 999;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(10deg);
+        }
+
+        /* Mobile Menu */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu {
+                display: block;
+                color: var(--marrom-escuro);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .category-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .category-image {
+                height: 180px;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr !important;
+                gap: 1.5rem;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .product-image {
+                height: 300px;
+            }
+
+            .product-card {
+                max-width: 100%;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .products-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% 0;
+            }
+            100% {
+                background-position: 200% 0;
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+
+        /* Loading shimmer for images */
+        .product-image img,
+        .category-image img {
+            background: linear-gradient(90deg, var(--bege-escuro) 25%, var(--bege) 50%, var(--bege-escuro) 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+
+        .product-image img[src],
+        .category-image img[src] {
+            animation: none;
+            background: transparent;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#" class="logo">
+                <img src="img/logo.png" alt="JÚ Tapetes Logo">
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="mobile-menu">☰</div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('img/banner-destaque.png');"></div>
+            <div class="slide" style="background-image: url('img/promo-tapetes.webp');"></div>
+            <div class="slide" style="background-image: url('img/sala/sala-3.jpg');"></div>
+            <div class="slide" style="background-image: url('img/cozinha/cozinha-1.jpg');"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="fade-in">Tapetes <span>Artesanais</span></h1>
+            <p class="hero-subtitle fade-in delay-1">Conforto e elegância para cada canto da sua casa</p>
+            <p class="hero-tagline fade-in delay-2">✦ Feito com amor em Guabiruba/SC ✦</p>
+            <div class="hero-buttons fade-in delay-3">
+                <a href="catalogo-ju-tapetes.pdf" download class="btn btn-primary">📥 Baixar Catálogo PDF</a>
+                <a href="#produtos" class="btn btn-secondary">Ver Produtos Online</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="countdown-section">
+        <div class="countdown-container">
+            <h2 class="countdown-title">🔥 Oferta Exclusiva</h2>
+            <p>Garanta seu tapete artesanal com preço promocional de lançamento. Essa oferta encerra em:</p>
+            <div class="timer-grid">
+                <div class="timer-item">
+                    <span class="timer-value" id="hours">24</span>
+                    <span class="timer-label">Horas</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-value" id="minutes">00</span>
+                    <span class="timer-label">Minutos</span>
+                </div>
+                <div class="timer-item">
+                    <span class="timer-value" id="seconds">00</span>
+                    <span class="timer-label">Segundos</span>
+                </div>
+            </div>
+            <a href="#produtos" class="btn btn-primary" style="background: var(--dourado); color: var(--marrom-escuro); font-weight: 700;">QUERO APROVEITAR A OFERTA</a>
+        </div>
+    </section>
+
+    <section class="categories">
+        <h2 class="section-title">Nossas Categorias</h2>
+        <p class="section-subtitle">Escolha o tamanho ideal para seu espaço</p>
+
+        <div class="category-grid">
+            <div class="category-card" onclick="filterProducts('cozinha')">
+                <div class="category-image">
+                    <img src="img/cozinha/cozinha-1.jpg" alt="Jogo de Cozinha">
+                    <div class="category-icon">🍳</div>
+                </div>
+                <div class="category-content">
+                    <h3>Jogo de Cozinha</h3>
+                    <p>3 peças: 1,40×0,50m + 2 de 0,70×0,50m</p>
+                    <span class="category-badge">Ver 2 modelos →</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterProducts('sala')">
+                <div class="category-image">
+                    <img src="img/sala/sala-1.jpg" alt="Tapete de Sala">
+                    <div class="category-icon">🛋️</div>
+                </div>
+                <div class="category-content">
+                    <h3>Tapete de Sala</h3>
+                    <p>2,00 × 1,45 metros</p>
+                    <span class="category-badge">Ver 3 modelos →</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterProducts('porta')">
+                <div class="category-image">
+                    <img src="img/porta/porta-bege.jpg" alt="Tapete Porta">
+                    <div class="category-icon">🚪</div>
+                </div>
+                <div class="category-content">
+                    <h3>Tapete Porta</h3>
+                    <p>0,70 × 0,50 metros</p>
+                    <span class="category-badge">Ver 4 modelos →</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterProducts('passadeira')">
+                <div class="category-image">
+                    <img src="img/passadeira/passadeira-preta.jpg" alt="Passadeira">
+                    <div class="category-icon">🛏️</div>
+                </div>
+                <div class="category-content">
+                    <h3>Passadeira</h3>
+                    <p>1,40 × 0,50 metros</p>
+                    <span class="category-badge">Ver 2 modelos →</span>
+                </div>
+            </div>
+            <div class="category-card" onclick="filterProducts('tapete')">
+                <div class="category-image">
+                    <img src="img/tapetes/tapete-bege.jpg" alt="Tapete 1,45x1,00m">
+                    <div class="category-icon">✨</div>
+                </div>
+                <div class="category-content">
+                    <h3>Tapete 1,45×1,00m</h3>
+                    <p>Versátil para diversos ambientes</p>
+                    <span class="category-badge">Ver 4 modelos →</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="produtos">
+        <div class="products-container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            <p class="section-subtitle">Veja nossos modelos e consulte valores no WhatsApp</p>
+
+            <div class="products-filter" id="products-filter">
+                <button class="filter-btn active" onclick="filterProducts(null)">Todos</button>
+                <button class="filter-btn" onclick="filterProducts('cozinha')">Cozinha</button>
+                <button class="filter-btn" onclick="filterProducts('sala')">Sala</button>
+                <button class="filter-btn" onclick="filterProducts('porta')">Porta</button>
+                <button class="filter-btn" onclick="filterProducts('passadeira')">Passadeira</button>
+                <button class="filter-btn" onclick="filterProducts('tapete')">1,45×1,00m</button>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be inserted here by JavaScript -->
+            </div>
+
+            <div class="products-empty" id="products-empty" style="display: none;">
+                <div class="empty-icon">🔍</div>
+                <h3>Nenhum produto encontrado</h3>
+                <p>Tente selecionar outra categoria</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="sobre">
+        <div class="about-container">
+            <h2>Nossa História</h2>
+            <p>
+                A JÚ Tapetes nasceu da paixão pelo artesanato e do desejo de levar conforto e beleza para os lares.
+                Cada peça é cuidadosamente confeccionada à mão, com atenção aos detalhes e carinho em cada ponto.
+            </p>
+            <p>
+                Utilizamos materiais de alta qualidade para garantir durabilidade e maciez. Nossos tapetes
+                são perfeitos para quem busca aquecer os ambientes com elegância e sofisticação.
+            </p>
+            <p class="about-highlight">
+                ✦ Feito com amor em Guabiruba, Santa Catarina ✦
+            </p>
+        </div>
+    </section>
+
+    <section class="reviews" id="avaliacoes">
+        <div class="reviews-container">
+            <h2 class="reviews-title">O que nossos clientes dizem</h2>
+
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Os tapetes são maravilhosos! Qualidade impecável, super macios e o acabamento é perfeito. Minha cozinha ficou linda com o jogo de tapetes. Com certeza vou comprar mais!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">👩</div>
+                        <div class="review-info">
+                            <h4>Maria Helena</h4>
+                            <span>Guabiruba, SC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Adorei o tapete da sala! As cores são exatamente como nas fotos e o tamanho é perfeito. Entrega super rápida e o atendimento foi excelente. Recomendo demais!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">👩</div>
+                        <div class="review-info">
+                            <h4>Ana Paula</h4>
+                            <span>Blumenau, SC</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">"Já comprei vários tapetes de porta para minha casa. São lindos, fáceis de limpar e duráveis. Preço justo pelo trabalho artesanal de qualidade. Nota 10!"</p>
+                    <div class="review-author">
+                        <div class="review-avatar">👨</div>
+                        <div class="review-info">
+                            <h4>Roberto Silva</h4>
+                            <span>Brusque, SC</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews-cta">
+                <a href="https://wa.me/5547991167631?text=Olá!%20Quero%20deixar%20minha%20avaliação%20sobre%20os%20tapetes%20da%20JÚ%20Tapetes!" class="btn btn-white" target="_blank">
+                    ⭐ Deixar minha avaliação
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sales Toast Notification -->
+    <div class="sales-toast" id="sales-toast">
+        <div class="sales-toast-avatar" id="toast-avatar">👤</div>
+        <div class="sales-toast-content">
+            <div class="sales-toast-text" id="toast-text">
+                <strong>Maria de Blumenau</strong> acabou de comprar um Jogo de Cozinha
+            </div>
+            <div class="sales-toast-time">⏰ há 2 minutos</div>
+        </div>
+    </div>
+
+    <section class="contact" id="contato">
+        <h2>Fale Conosco</h2>
+        <p>Tem dúvidas ou quer fazer um pedido personalizado? Estamos aqui para ajudar!</p>
+        <div class="contact-buttons">
+            <a href="https://wa.me/5547991167631?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tapetes%20da%20JÚ%20Tapetes!" class="btn btn-whatsapp" target="_blank">
+                📱 Falar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">JÚ TAPETES</div>
+        <p class="footer-tagline">Feito com amor em Guabiruba/SC</p>
+        <div class="footer-links">
+            <a href="#home">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </div>
+        <p class="footer-copy">© 2025 JÚ Tapetes. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5547991167631?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20os%20tapetes%20da%20JÚ%20Tapetes!" class="whatsapp-float" target="_blank">
+        💬
+    </a>
+
+    <script>
+        // Hero Carousel Logic
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function nextSlide() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(nextSlide, 5000);
+
+        // Countdown Timer Logic
+        function updateTimer() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0); // Next midnight
+
+            const diff = midnight - now;
+
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+
+        setInterval(updateTimer, 1000);
+        updateTimer();
+
+        const products = [
+            {
+                id: 1,
+                name: "Jogo de Cozinha Bege",
+                category: "cozinha",
+                categoryName: "Jogo de Cozinha",
+                specs: "3 peças: 1,40x0,50m + 2 de 0,70x0,50m",
+                price: "Consultar",
+                image: "img/cozinha/cozinha-1.jpg"
+            },
+            {
+                id: 2,
+                name: "Jogo de Cozinha Azul Mesclado",
+                category: "cozinha",
+                categoryName: "Jogo de Cozinha",
+                specs: "3 peças: 1,40x0,50m + 2 de 0,70x0,50m",
+                price: "Consultar",
+                image: "img/cozinha/cozinha-2.jpg",
+                badge: "Novo"
+            },
+            {
+                id: 3,
+                name: "Tapete de Sala",
+                category: "sala",
+                categoryName: "Tapete de Sala",
+                specs: "2,00 x 1,45 metros",
+                price: "Consultar",
+                image: "img/sala/sala-1.jpg"
+            },
+            {
+                id: 4,
+                name: "Tapete de Sala Bege",
+                category: "sala",
+                categoryName: "Tapete de Sala",
+                specs: "2,00 x 1,45 metros",
+                price: "Consultar",
+                image: "img/sala/sala-2.jpg"
+            },
+            {
+                id: 5,
+                name: "Tapete de Sala Chumbo",
+                category: "sala",
+                categoryName: "Tapete de Sala",
+                specs: "2,00 x 1,45 metros",
+                price: "Consultar",
+                image: "img/sala/sala-3.jpg"
+            },
+            {
+                id: 6,
+                name: "Tapete Porta Bege",
+                category: "porta",
+                categoryName: "Tapete Porta",
+                specs: "0,70 x 0,50 metros",
+                price: "Consultar",
+                image: "img/porta/porta-bege.jpg"
+            },
+            {
+                id: 7,
+                name: "Tapete Porta Preto",
+                category: "porta",
+                categoryName: "Tapete Porta",
+                specs: "0,70 x 0,50 metros",
+                price: "Consultar",
+                image: "img/porta/porta-preto.jpg",
+                badge: "Mais Vendido"
+            },
+            {
+                id: 8,
+                name: "Tapete Porta Chumbo",
+                category: "porta",
+                categoryName: "Tapete Porta",
+                specs: "0,70 x 0,50 metros",
+                price: "Consultar",
+                image: "img/porta/porta-chumbo.jpg"
+            },
+            {
+                id: 9,
+                name: "Tapete Porta Azul Claro",
+                category: "porta",
+                categoryName: "Tapete Porta",
+                specs: "0,70 x 0,50 metros",
+                price: "Consultar",
+                image: "img/porta/porta-azul.jpg"
+            },
+            {
+                id: 10,
+                name: "Passadeira Preta",
+                category: "passadeira",
+                categoryName: "Passadeira",
+                specs: "1,40 x 0,50 metros",
+                price: "Consultar",
+                image: "img/passadeira/passadeira-preta.jpg"
+            },
+            {
+                id: 11,
+                name: "Passadeira Areia",
+                category: "passadeira",
+                categoryName: "Passadeira",
+                specs: "1,40 x 0,50 metros",
+                price: "Consultar",
+                image: "img/passadeira/passadeira-areia.jpg"
+            },
+            {
+                id: 12,
+                name: "Tapete Bege 1,45x1,00m",
+                category: "tapete",
+                categoryName: "Tapete 1,45x1,00m",
+                specs: "1,45 x 1,00 metros",
+                price: "Consultar",
+                image: "img/tapetes/tapete-bege.jpg"
+            },
+            {
+                id: 13,
+                name: "Tapete Azul Mesclado 1,45x1,00m",
+                category: "tapete",
+                categoryName: "Tapete 1,45x1,00m",
+                specs: "1,45 x 1,00 metros",
+                price: "Consultar",
+                image: "img/tapetes/tapete-azul.jpg"
+            },
+            {
+                id: 14,
+                name: "Tapete Grafite 1,45x1,00m",
+                category: "tapete",
+                categoryName: "Tapete 1,45x1,00m",
+                specs: "1,45 x 1,00 metros",
+                price: "Consultar",
+                image: "img/tapetes/tapete-grafite.jpg"
+            },
+            {
+                id: 15,
+                name: "Tapete Off White 1,45x1,00m",
+                category: "tapete",
+                categoryName: "Tapete 1,45x1,00m",
+                specs: "1,45 x 1,00 metros",
+                price: "Consultar",
+                image: "img/tapetes/tapete-offwhite.jpg",
+                badge: "Promoção"
+            }
+        ];
+
+        const WHATSAPP_NUMBER = "5547991167631";
+
+        function renderProducts(filterCategory = null) {
+            const grid = document.getElementById('products-grid');
+            const emptyState = document.getElementById('products-empty');
+            const filteredProducts = filterCategory
+                ? products.filter(p => p.category === filterCategory)
+                : products;
+
+            // Update filter buttons
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (!filterCategory && btn.textContent === 'Todos') {
+                    btn.classList.add('active');
+                } else if (filterCategory) {
+                    const categoryNames = {
+                        'cozinha': 'Cozinha',
+                        'sala': 'Sala',
+                        'porta': 'Porta',
+                        'passadeira': 'Passadeira',
+                        'tapete': '1,45×1,00m'
+                    };
+                    if (btn.textContent === categoryNames[filterCategory]) {
+                        btn.classList.add('active');
+                    }
+                }
+            });
+
+            if (filteredProducts.length === 0) {
+                grid.style.display = 'none';
+                emptyState.style.display = 'block';
+                return;
+            }
+
+            grid.style.display = 'grid';
+            emptyState.style.display = 'none';
+
+            grid.innerHTML = filteredProducts.map(product => `
+                <div class="product-card">
+                    <div class="product-image">
+                        ${product.badge ? `<span class="product-badge">${product.badge}</span>` : ''}
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                        <div class="product-image-overlay"></div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${product.categoryName}</span>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-specs">${product.specs}</p>
+                        <div class="product-price">${product.price}</div>
+                        <button class="product-whatsapp" onclick="orderViaWhatsApp('${product.name}', '${product.price}')">
+                            💬 Consultar no WhatsApp
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function orderViaWhatsApp(productName, price) {
+            const message = `Olá! Vi no site da JÚ Tapetes e gostaria de saber mais sobre o ${productName}. Pode me ajudar?`;
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Handle image loading errors
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', function() {
+                    this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="280" height="280" viewBox="0 0 280 280"><rect fill="%23E8DDD0" width="280" height="280"/><text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="serif" font-size="60" fill="%238B7355">JÚ</text></svg>';
+                });
+            });
+        });
+
+        // Sales Toast Notifications - Dados realistas e dinâmicos
+        const salesData = [
+            { name: 'Maria Helena', city: 'Blumenau', product: 'Jogo de Cozinha Bege', initials: 'MH', color: '#E74C3C', status: 'Cliente Novo' },
+            { name: 'Ana Paula', city: 'Guabiruba', product: 'Tapete de Sala Chumbo', initials: 'AP', color: '#3498DB', status: '2ª compra' },
+            { name: 'Roberto Silva', city: 'Brusque', product: 'Tapete Porta Preto', initials: 'RS', color: '#27AE60', status: 'Cliente VIP' },
+            { name: 'Juliana Costa', city: 'Itajaí', product: 'Passadeira Areia', initials: 'JC', color: '#F39C12', status: 'Cliente Novo' },
+            { name: 'Fernanda Lima', city: 'Florianópolis', product: 'Tapete Bege 1,45m', initials: 'FL', color: '#9B59B6', status: '3ª compra' },
+            { name: 'Carlos Eduardo', city: 'Joinville', product: 'Jogo de Cozinha Azul', initials: 'CE', color: '#1ABC9C', status: '2ª compra' },
+            { name: 'Mariana Souza', city: 'Balneário Camboriú', product: 'Tapete Porta Bege', initials: 'MS', color: '#E67E22', status: 'Cliente Novo' },
+            { name: 'Lucas Mendes', city: 'São José', product: 'Tapete Grafite 1,45m', initials: 'LM', color: '#34495E', status: '2ª compra' },
+            { name: 'Patrícia Alves', city: 'Gaspar', product: 'Passadeira Preta', initials: 'PA', color: '#16A085', status: 'Cliente VIP' },
+            { name: 'Bruno Rocha', city: 'Ilhota', product: 'Tapete Porta Chumbo', initials: 'BR', color: '#C0392B', status: 'Cliente Novo' },
+            { name: 'Camila Dias', city: 'Navegantes', product: 'Jogo de Cozinha Bege', initials: 'CD', color: '#8E44AD', status: '2ª compra' },
+            { name: 'Rafael Teixeira', city: 'Penha', product: 'Tapete Azul 1,45m', initials: 'RT', color: '#2980B9', status: 'Cliente Novo' }
+        ];
+
+        let toastIndex = 0;
+        const toast = document.getElementById('sales-toast');
+        const toastText = document.getElementById('toast-text');
+        const toastAvatar = document.getElementById('toast-avatar');
+
+        // Gerar avatar SVG com iniciais
+        function generateAvatarSVG(initials, color) {
+            const svg = `<svg width="45" height="45" viewBox="0 0 45 45" xmlns="http://www.w3.org/2000/svg">
+                <rect width="45" height="45" rx="50%" fill="${color}"/>
+                <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-weight="600" font-size="16">${initials}</text>
+            </svg>`;
+            return `data:image/svg+xml;base64,${btoa(unescape(encodeURIComponent(svg)))}`;
+        }
+
+        function showToast() {
+            // Selecionar venda aleatória
+            const sale = salesData[Math.floor(Math.random() * salesData.length)];
+
+            // Criar avatar com iniciais
+            const avatarImg = generateAvatarSVG(sale.initials, sale.color);
+            toastAvatar.innerHTML = `<img src="${avatarImg}" alt="${sale.name}" style="width: 45px; height: 45px; border-radius: 50%;">`;
+
+            // Badge de status do cliente
+            const statusBadge = `<span style="display:inline-block; font-size:10px; background:var(--bege-escuro); color:var(--marrom-escuro); padding:2px 6px; border-radius:4px; margin-left:5px; vertical-align:middle; font-weight:700; text-transform:uppercase;">${sale.status}</span>`;
+
+            // Texto mais natural e variado
+            const phrases = [
+                `<strong>${sale.name}</strong> de ${sale.city} ${statusBadge} acabou de comprar`,
+                `<strong>${sale.name}</strong> (${sale.city}) ${statusBadge} garantiu seu`,
+                `Nova venda: <strong>${sale.name}</strong> ${statusBadge} de ${sale.city}`,
+                `<strong>${sale.name}</strong> ${statusBadge} de ${sale.city} acabou de levar o`
+            ];
+            const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+            toastText.innerHTML = `${randomPhrase} <strong style="color: var(--dourado);">${sale.product}</strong>`;
+
+            // Tempo aleatório entre 2-30 minutos para parecer mais real
+            const times = ['2 minutos', '5 minutos', '8 minutos', '12 minutos', '15 minutos', '20 minutos', '30 minutos'];
+            const randomTime = times[Math.floor(Math.random() * times.length)];
+            toast.querySelector('.sales-toast-time').innerHTML = `<span style="display: inline-flex; align-items: center; gap: 5px;"><span style="color: #25D366;">●</span> há ${randomTime}</span>`;
+
+            toast.classList.add('show');
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 6000);
+        }
+
+        // Intervalo maior: mostra a primeira após 10 segundos, depois a cada 45 segundos
+        setTimeout(showToast, 10000);
+        setInterval(showToast, 45000);
+
+        // Add scarcity badges to some products
+        const scarcityProducts = [2, 6, 10, 14]; // IDs of products with scarcity
+
+        function addScarcityBadges() {
+            const badges = ['Últimas unidades!', 'Restam 3!', 'Restam 2!', 'Esgotando!'];
+
+            scarcityProducts.forEach((productId, index) => {
+                const cards = document.querySelectorAll('.product-card');
+                cards.forEach(card => {
+                    const btn = card.querySelector('.product-whatsapp');
+                    if (btn && btn.getAttribute('onclick').includes(`orderViaWhatsApp('${products.find(p => p.id === productId).name}'`)) {
+                        const badge = document.createElement('span');
+                        badge.className = 'scarcity-badge';
+                        badge.textContent = badges[index % badges.length];
+                        card.querySelector('.product-image').appendChild(badge);
+                    }
+                });
+            });
+        }
+
+        // Run after products are rendered
+        setTimeout(addScarcityBadges, 1000);
+
+        function filterProducts(category) {
+            const grid = document.getElementById('products-grid');
+
+            // Animate out
+            grid.style.opacity = '0';
+            grid.style.transform = 'translateY(20px)';
+            grid.style.transition = 'opacity 0.3s, transform 0.3s';
+
+            setTimeout(() => {
+                renderProducts(category);
+
+                // Animate in
+                grid.style.opacity = '1';
+                grid.style.transform = 'translateY(0)';
+
+                document.getElementById('produtos').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Initialize
+        renderProducts();
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        document.querySelectorAll('.category-card, .product-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s, transform 0.6s';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
