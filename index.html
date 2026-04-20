@@ -4,6 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JÚ Tapetes | Artesanato em Guabiruba/SC</title>
+    
+    <!-- SEO & Social Media Meta Tags -->
+    <meta name="description" content="JÚ Tapetes - Tapetes artesanais de alta qualidade feitos à mão em Guabiruba/SC. Conforto e elegância para sua casa com jogos de cozinha, sala e passadeiras.">
+    <meta name="keywords" content="tapetes artesanais, guabiruba, artesanato, decoração, tapete de crochê, jogo de cozinha, brusque, santa catarina">
+    <meta name="author" content="JÚ Tapetes">
+    
+    <!-- Open Graph (WhatsApp, Facebook, Instagram) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JÚ Tapetes | Conforto e Arte em cada ponto">
+    <meta property="og:description" content="Tapetes artesanais feitos com amor em Guabiruba/SC. Clique e conheça nosso catálogo!">
+    <meta property="og:image" content="https://jutapetes.com.br/img/logo.png">
+    <meta property="og:url" content="https://jutapetes.com.br">
+    
     <link rel="icon" type="image/png" href="img/logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -438,16 +451,25 @@
 
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            justify-content: start;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 380px));
+            gap: 2.5rem;
+            justify-content: center;
+            width: 100%;
         }
 
-        /* Desktop: max 3 columns */
-        @media (min-width: 1024px) {
+        /* Desktop: up to 3 columns but centered */
+        @media (min-width: 1200px) {
             .products-grid {
                 grid-template-columns: repeat(3, 1fr);
+                max-width: 1200px;
+                margin: 0 auto;
             }
+        }
+
+        /* Adjusting for items on the last row */
+        .products-grid::after {
+            content: "";
+            flex: auto;
         }
 
         /* Tablet: 2 columns */
@@ -463,28 +485,6 @@
                 grid-template-columns: 1fr;
                 gap: 1.5rem;
             }
-        }
-
-        /* Few products - fit content */
-        .products-grid:has(.product-card:nth-child(1):last-child) {
-            grid-template-columns: minmax(300px, 400px);
-            justify-content: center;
-        }
-
-        .products-grid:has(.product-card:nth-child(2):last-child) {
-            grid-template-columns: repeat(2, minmax(300px, 400px));
-            justify-content: center;
-        }
-
-        /* Highlight when few products */
-        .products-grid:has(.product-card:nth-child(1):last-child) .product-card,
-        .products-grid:has(.product-card:nth-child(2):last-child) .product-card {
-            transform: scale(1.02);
-        }
-
-        .products-grid:has(.product-card:nth-child(1):last-child) .product-card:hover,
-        .products-grid:has(.product-card:nth-child(2):last-child) .product-card:hover {
-            transform: scale(1.06) translateY(-10px);
         }
 
         .product-card {
